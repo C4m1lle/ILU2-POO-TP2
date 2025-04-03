@@ -16,7 +16,10 @@ public class ControlTrouverEtalVendeur {
 		Gaulois vendeur = village.trouverHabitant(nomVendeur);
 		if(vendeur!=null) {
 			etal = village.rechercherEtal(vendeur);
+			if(etal!=null && etal.isEtalOccupe()) {
+				return etal;
+			}
 		}
-		return etal;
+		return null;
 	}
 }
